@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="login-form">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button type="submit">Login</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (username === 'admin' && password === '1234') {
+        window.location.href = 'dashboard.html';
+      } else {
+        document.getElementById('message').textContent = 'Login failed!';
+      }
+    });
+  </script>
+</body>
+</html>
